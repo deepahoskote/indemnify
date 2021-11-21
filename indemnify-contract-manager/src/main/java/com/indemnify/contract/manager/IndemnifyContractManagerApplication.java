@@ -20,17 +20,16 @@ public class IndemnifyContractManagerApplication {
         ContractService contractService = applicationContext.getBean(ContractService.class);
         try {
             String contractId = contractService.createContract(ContractByteCode.VENDING_MACHINE);
-            System.out.println("contract Created = " + contractId);
-
+            System.out.println("Contract created = " + contractId);
 
             ContractInfo contractInfo = contractService.getContractInfo(contractId);
             System.out.println(contractInfo.toString());
             Map<TokenId, TokenRelationship> tokenRelationships = contractInfo.tokenRelationships;
 
 
-            ContractCall contractCall = new ContractCall(contractId,"refill","1000");
-            String contractCallQueryResponse = contractService.contractCallQuery(contractCall);
-            System.out.println("contractCallQueryResponse = " + contractCallQueryResponse);
+//            ContractCall contractCall = new ContractCall(contractId,"refill","1000");
+//            String contractCallQueryResponse = contractService.contractCallQuery(contractCall);
+//            System.out.println("contractCallQueryResponse = " + contractCallQueryResponse);
 
 
         } catch (HederaPreCheckStatusException e) {
