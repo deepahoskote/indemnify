@@ -19,7 +19,7 @@ public class IndemnifyContractManagerApplication {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(IndemnifyContractManagerApplication.class, args);
         ContractService contractService = applicationContext.getBean(ContractService.class);
         try {
-            String contractId = contractService.createContract(ContractByteCode.VENDING_MACHINE);
+            String contractId = contractService.createContract(ContractByteCode.INDEMNIFY_CONTRACT);
             System.out.println("Contract created = " + contractId);
 
             ContractInfo contractInfo = contractService.getContractInfo(contractId);
